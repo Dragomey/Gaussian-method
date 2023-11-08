@@ -19,6 +19,7 @@ int f_cin_step (int n, int i){
         }
         cin >> cof;
         equ[i][j] *= cof;
+        cin >> sim;
     }
     cin >> cof;
     equ[i][n+1] = cof;
@@ -26,11 +27,16 @@ int f_cin_step (int n, int i){
 }
 
 int f_cin (int n){
+    char k;
+    int f;
     vector <vector<int>> gf (n, vector <int> (n + 1, 1));
     equ = gf;
     for (int i = 0; i < n; i++) {
         f_cin_step(n, i);
     }
+    cin >> k;
+    cin >> f;
+    equ[n][
     return 0;
 }
 
@@ -42,6 +48,11 @@ int main() {
     cin >> num;
     cout << "Введите уравнения через Enter" << endl;
     f_cin(num);
-
+    for (int i = 0; i < num; i++) {
+        for (int j = 0; j < num + 1; j++) {
+            cout << equ[i][j] << " ";
+        }
+        cout << endl;
+    }
     return 0;
 }
